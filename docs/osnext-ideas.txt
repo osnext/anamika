@@ -1,0 +1,31 @@
+Walkthrough:
+============
+fire up the box
+os shows schematic of the system
+as parts are identified, verified and made ready, the schematic shows the progress
+  there's ability to hide/show this feature. hide is the default
+at login, there's the usual uid/pwd screen.
+once logged in, you're dropped into a "naked" interface, ie, without much chrome. All available resources, however are represented in the same schematic. Your desktop is the schematic. (how about a zoomable ui here?)
+there is, however, a hidden HUD with:
+	- current user
+	- other widgets
+Long press on Win/Cmd key => HUD shown
+No menus, object expose context menus which are radial
+	- inheritance depicted via colors on menu items
+Main display has top categories by usage
+choosing any object prompts for verb, ie app to open it with
+direct acces to versions of objects from context menu
+all content is shared by everybody using the system, until specifically opted to become "private"
+two/more users can be logged in at the same time. 
+the default worspace is "share all", but can move to private workspace when required
+
+each desktop has multiple workspaces with an integrated todo list
+objects (eg, todos) can be moved from one workspace to another without context switch.
+
+Shoulds:
+========
+- Should support all the following interaction modes:
+  - subject, verb, object: eg "Excel, open, abc.xls".
+  - object, verb, subject: eg, "abc.xls, open with, Excel" or "abc.xls, send to, trash"
+  - verb, subject, object: eg, "open, excel, abc.xls". this is useful for launchers where the action is thought of first.
+  - verb, object, subject: eg, "open, abc.xls, excel".
