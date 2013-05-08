@@ -4,12 +4,14 @@ fire up the box
 os shows schematic of the system
 as parts are identified, verified and made ready, the schematic shows the progress
   there's ability to hide/show this feature. hide is the default
-at login, there's the usual uid/pwd screen.
-once logged in, you're dropped into a "naked" interface, ie, without much chrome. All available resources, however are represented in the same schematic. Your desktop is the schematic. (how about a zoomable ui here?)
+at login, the usual uid/pwd screen is conspicuous by its absence. instead the desktop shows up directly.
+the desktop is a "naked" interface, ie, without much chrome. 
 there is, however, a hidden HUD with:
-	- current user
-	- other widgets
-Long press on Win/Cmd key => HUD shown
+	- a run control similar to the Windows Start button or spotlight on mac.
+	- a workspaces control that zooms out to show all workspaces
+	- the current user in force. by default this is "everyone". the switch to a specific user is only when the user demands it.
+	- the schematic from the startup which now doubles as the "control panel"
+Long press on Win/Cmd key => HUD shown with icons at the 4 corners of the screen.
 No menus, object expose context menus which are radial
 	- inheritance depicted via colors on menu items
 Main display has top categories by usage
