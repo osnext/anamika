@@ -5,32 +5,58 @@
 <title>OSNext PoC: Codename Anamika</title>
 
 <style>
-html, head, body, .fadein, .fadein div, .fadein div img {width: 95%; height: 95%;}
+html, head, body, .slideshow, .slideshow div, .slideshow div img {width: 95%; height: 95%;}
 
 body {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
 
-.fadein { position:relative; }
-.fadein div { position:absolute; left:0; top:0; }
+.slideshow { position:relative; }
+.slideshow div { position:absolute; left:0; top:0; }
+.ssctrls {}
+
 </style>
 
 <script src="jquery.min.js"></script>
 <script>
+var pauseIt = false;
 $(function(){
-	$('.fadein div:gt(0)').hide();
-	setInterval(function(){$('.fadein div:first').fadeOut().next().fadeIn().end().appendTo('.fadein');}, 5000);
+	$('.slideshow div:gt(0)').hide();
+	setInterval(function(){
+		if(!pauseIt) {
+			$('.slideshow div:first').fadeOut().next().fadeIn().end().appendTo('.slideshow');
+		}
+	}, 5000);
 });
+
+function toggle(){
+	if(!pauseIt){
+		pauseIt=true;
+		$("#ssCtrl").html("Go");
+		$("#ssStatus").text("Paused");
+	}else{
+		pauseIt=false;
+		$("#ssCtrl").html("Pause");
+		$("#ssStatus").text("Running");
+	}
+}
 </script>
 
 </head>
 <body>
 <h1>OSNext PoC: Codename Anamika</h1>
-<div class="fadein">
+
+<div class="ssctrls">
+	<span>Slideshow is <span id="ssStatus">Running</span> 
+	<button id="ssCtrl" onclick="javascript:toggle()">Pause</button>
+</div>
+
+<div class="slideshow">
 	<div><img src="001.svg"/></div>
 	<div><img src="002.1.svg"/></div>
 	<div><img src="002.2.svg"/></div>
 	<div><img src="004.svg"/></div>
 	<div><img src="005.svg"/> <p>Workspaces, People, Run, System </p> </div>
 </div>
-<p>Slideshow code from <a href="http://snook.ca/archives/javascript/simplest-jquery-slideshow">this blog post</a> and <a href="http://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/">this one too</a></p>
+
+<p>Slideshow code from <a href="http://snook.ca/archives/javascript/simplest-jquery-slideshow">this blog post</a> and <a href="http://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/">this one too</a>. Pause/Go additions mine.</p>
 </body>
 </html>
