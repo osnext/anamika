@@ -28,6 +28,8 @@ Shoulds:
 ========
 - Should support all the following interaction modes:
   - subject, verb, object: eg "Excel, open, abc.xls".
+  - subject, object, verb: eg, "Excel, abc.xls, open" or "Excel, abc.xls, saveas pdf"
   - object, verb, subject: eg, "abc.xls, open with, Excel" or "abc.xls, send to, trash"
+  - object, subject, verb: eg, "abc.xls, excel, open"
   - verb, subject, object: eg, "open, excel, abc.xls". this is useful for launchers where the action is thought of first.
   - verb, object, subject: eg, "open, abc.xls, excel".
