@@ -1,0 +1,7 @@
+{
+  "name": "nw-demo",
+  "main": "extjs/examples/desktop/desktop.html",
+  "window" : {
+  	//"fullscreen" : true
+  }
+}
