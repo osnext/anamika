@@ -28,21 +28,16 @@ Ext.onReady(function () {
                     if(v > count){
                         cb();
                     }else{
-                        if(pbar.id=='pbar4'){
-                            //give this one a different count style for fun
-                            var i = v/count;
-                            pbar.updateProgress(i, Math.round(100*i)+'% completed...');
-                        }else{
-                            pbar.updateProgress(v/count, 'Loading item ' + v + ' of '+count+'...');
-                        }
+                        var i = v / count;
+                        pbar.updateProgress(i, Math.round(100 * i) + '% completed...');
                     }
                };
             };
             return {
                 run : function(pbar, count, cb) {
-                    var ms = 5000/count;
-                    for(var i = 1; i < (count+2); i++){
-                       setTimeout(f(i, pbar, count, cb), i*ms);
+                    var ms = 5000 / count;
+                    for(var i = 1; i < (count + 2); i++) {
+                       setTimeout(f(i, pbar, count, cb), i * ms);
                     }
                 }
             };
@@ -197,15 +192,38 @@ Ext.onReady(function () {
         });
         loadingPanel.center();
 
-        Runner.run(pbar1, 12, function() {
-            pbar1.reset();
-            pbar1.updateText('Done.');
-        });
+        Runner.run(pbar6, 12, function() {
+            var i = 1 / 5;
+            pbar6.updateText('Done.');
+            pbar7.updateProgress(i, Math.round(100 * i) + '% completed...');
 
-        Runner.run(pbar2, 5, function() {
-            pbar2.reset();
-            pbar2.updateText('Done.');
-        });
+            Runner.run(pbar5, 6, function() {
+                pbar5.updateText('Done.');
+            });
 
+            Runner.run(pbar4, 6, function() {
+                pbar4.updateText('Done.');
+                i = 2 / 5;
+                pbar7.updateProgress(i, Math.round(100 * i) + '% completed...');
+
+                Runner.run(pbar3, 8, function() {
+                    pbar3.updateText('Done.');
+                    i = 3 / 5;
+                    pbar7.updateProgress(i, Math.round(100 * i) + '% completed...');
+
+                    Runner.run(pbar2, 7, function() {
+                        pbar2.updateText('Done.');
+                        i = 4 / 5;
+                        pbar7.updateProgress(i, Math.round(100 * i) + '% completed...');
+
+                        Runner.run(pbar1, 20, function() {
+                            pbar1.updateText('Done.');
+                            i = 5 / 5;
+                            pbar7.updateProgress(i, Math.round(100 * i) + '% completed...');
+                        });
+                    });
+                });
+            });
+        });
     },1000);
 });
