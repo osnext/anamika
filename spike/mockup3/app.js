@@ -25,8 +25,8 @@ function launchStartupScreen()
     setTimeout(function() {
         // hide the starting panel.
         startingPanel.hide();
-        //launchLoadingScreen();
-        launchMostUsedScreen();
+        launchLoadingScreen();
+        //launchMostUsedScreen();
     },1000);
 }
 
