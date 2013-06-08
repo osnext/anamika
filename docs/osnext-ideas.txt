@@ -24,12 +24,64 @@ the default worspace is "share all", but can move to private workspace when requ
 each desktop has multiple workspaces with an integrated todo list
 objects (eg, todos) can be moved from one workspace to another without context switch.
 
-Shoulds:
-========
-- Should support all the following interaction modes:
+App Startup and interaction
+============================
+- Starting apps should support all the following interaction modes:
   - subject, verb, object: eg "Excel, open, abc.xls".
   - subject, object, verb: eg, "Excel, abc.xls, open" or "Excel, abc.xls, saveas pdf"
   - object, verb, subject: eg, "abc.xls, open with, Excel" or "abc.xls, send to, trash"
   - object, subject, verb: eg, "abc.xls, excel, open"
   - verb, subject, object: eg, "open, excel, abc.xls". this is useful for launchers where the action is thought of first.
   - verb, object, subject: eg, "open, abc.xls, excel".
+
+An app will start up in "soverign" mode always, ie it will fill the screen. From that state it can be resized so that other running apps can be seen in one of few ways:
+  - as part of tiling grid
+  - as a semantically zoomed app so that other apps in the workspace are seen and then can be interacted with.
+  - as a normal "restore"d window. this is the least preferred, may be supported for legacy apps/wm's.
+
+Why do apps need to be non-soverign? When you need to do things involving more than one window/app. Egs:
+  - actively use one, view the other: to look at a movie while coding in an editor.
+  - xfer data from one to another: drag+drop text from one app to another
+  - passively view all: visually cycle through windows in a workspace
+  
+Semantic Zoom
+=============
+This section is slightly at loggerheads with the sections above, but here goes: The emerging hierarchy of contexts is:
+  - hardware box
+    - user
+      - workspace
+        - app1
+        - app2
+
+... so why not zoom in and out of this hierarchy visually and use that as the primary mode of navigation? The HUD mentioned above for the "desktop" is no longer needed; repeated "escapes" *should* take you up the hierarchy. Interaction will be like so:
+
+OS loads up and displays the "default" workspace.
+Hit esc to zoom out one level. now you can see the other workspaces, but your current one is still the largest; ie the display zooms out just enough to show you the other workspaces.
+Hit esc to zoom out again. Now you can see all your workspaces and all other users, in the same "just enough to show you other users" style.
+Hit esc again and you reach the machine level. Now you can see all users and the machine's stack.
+
+something like 'ctrl-esc' would get you up to the top and back in one shot.
+
+Ideas without a home
+=====================
+
+###Chrome and ui as a graph
+
+What is chrome? In typical IA talk, "chrome" refers to the bits of ui that are there solely for navigation or working around the constrints of the display; eg, scroll bars, window title bar so it can be dragged, scrollpane dividers, toolbars, the window's border itself and so forth.
+
+in trying to come up with a ui that is mostly chrome-free, i have to think about even more basic chrome that seems inevitable, like the alt-tab list or the workspace display or even the status bar with the time on it. these bits of chrome, while not being natural, are useful. not just that, they flatten a hierarchy of information which othewise would have required navigation to get to (eg, if we follow the semantic zoom concepts from above, then the user would have to zoom up all the way to the machine to see the current time or wifi status).
+
+one idea to handle this:
+- treat the ui as a graph that's mainly tree, but also has links and views:
+  - the hierarchy from the zoomable ui section is the tree.
+  - links are a way to navigate from one place to another without "work": you can hyper link to the destination. eg, instead of alt tabbing to the 5th window in the workspace you presss "ctrl+tab+5" 
+  - views are a read-only embedding of an object at a different level in the heierarchy or graph that's embedded in the current level. eg: the current time is a view into the system's clock at the workspace level.
+
+### Responsive UI
+
+make the ui responsive to different screen sizes by default. this idea is inspired by Bill Hill's concepts related to Truetype. If the human visual system has clear limits, why not model everything based on that and do away with screen resolution concerns and device-specific optimizations? we treat the screen as a viewport into canvas as usual, but fix that canvas with an absolute coordinate system that is pegged at the lower limit of human visual acuity. Any increase in screen size means more of the canvas is visible. Zoom in (this is the physical zoom, not semantic) is possible until that limit is reached, not the device's resolution limit. similarly zoom out is possible to cater to humans' range in visual actuity but not to deal with app-specific zoom in/out. with such a philosophy, ui development will move from "what controls can i put on screen in device x" towards "what should my user see to do task x?"
+
+### Visible clipboard
+
+most os's now have clipboards but they're not visible. it should be possible to view the system clipboard easily and select one of many snippets for pasting. this is usually an "app" in most os's but imo this should be part of the OS itself.
+
