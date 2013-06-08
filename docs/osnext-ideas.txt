@@ -43,7 +43,9 @@ Why do apps need to be non-soverign? When you need to do things involving more t
   - actively use one, view the other: to look at a movie while coding in an editor.
   - xfer data from one to another: drag+drop text from one app to another
   - passively view all: visually cycle through windows in a workspace
-  
+
+except for the xfer use case, the others are passive displays, in fact the last one has been successfully been done for ages using icons of the apps instead of the running app itself. so we could optimize for that case alone being a live app and the others being "static views". This of course, goes against the grain of no chrome.
+
 Semantic Zoom
 =============
 This section is slightly at loggerheads with the sections above, but here goes: The emerging hierarchy of contexts is:
@@ -55,10 +57,12 @@ This section is slightly at loggerheads with the sections above, but here goes: 
 
 ... so why not zoom in and out of this hierarchy visually and use that as the primary mode of navigation? The HUD mentioned above for the "desktop" is no longer needed; repeated "escapes" *should* take you up the hierarchy. Interaction will be like so:
 
-OS loads up and displays the "default" workspace.
-Hit esc to zoom out one level. now you can see the other workspaces, but your current one is still the largest; ie the display zooms out just enough to show you the other workspaces.
-Hit esc to zoom out again. Now you can see all your workspaces and all other users, in the same "just enough to show you other users" style.
-Hit esc again and you reach the machine level. Now you can see all users and the machine's stack.
+- OS loads up and displays the "default" workspace.
+- Load up an app, now the app fills the entire screen.
+- Hit esc to zoom out one level. Now you can see the other apps in the workspace. current app is still the largest and the display zooms out just enough to show you other apps.
+- Hit esc to zoom out one level. now you can see the other workspaces, but your current one is still the largest; ie the display zooms out just enough to show you the other workspaces.
+- Hit esc to zoom out again. Now you can see all your workspaces and all other users, in the same "just enough to show you other users" style.
+- Hit esc again and you reach the machine level. Now you can see all users and the machine's stack.
 
 something like 'ctrl-esc' would get you up to the top and back in one shot.
 
@@ -75,11 +79,11 @@ one idea to handle this:
 - treat the ui as a graph that's mainly tree, but also has links and views:
   - the hierarchy from the zoomable ui section is the tree.
   - links are a way to navigate from one place to another without "work": you can hyper link to the destination. eg, instead of alt tabbing to the 5th window in the workspace you presss "ctrl+tab+5" 
-  - views are a read-only embedding of an object at a different level in the heierarchy or graph that's embedded in the current level. eg: the current time is a view into the system's clock at the workspace level.
+  - views are a read-only embedding of an object at a different level in the hierarchy or graph that's embedded in the current level. eg: the current time is a view into the system's clock at the workspace level.
 
 ### Responsive UI
 
-make the ui responsive to different screen sizes by default. this idea is inspired by Bill Hill's concepts related to Truetype. If the human visual system has clear limits, why not model everything based on that and do away with screen resolution concerns and device-specific optimizations? we treat the screen as a viewport into canvas as usual, but fix that canvas with an absolute coordinate system that is pegged at the lower limit of human visual acuity. Any increase in screen size means more of the canvas is visible. Zoom in (this is the physical zoom, not semantic) is possible until that limit is reached, not the device's resolution limit. similarly zoom out is possible to cater to humans' range in visual actuity but not to deal with app-specific zoom in/out. with such a philosophy, ui development will move from "what controls can i put on screen in device x" towards "what should my user see to do task x?"
+make the ui responsive to different screen sizes by default. this idea is inspired by Bill Hill's concepts related to Truetype. If the human visual system has clear limits, why not model everything based on that and do away with screen resolution concerns and device-specific optimizations? we treat the screen as a viewport into canvas as usual, but fix that canvas with an absolute coordinate system that is pegged at the lower limit of human visual acuity. Any increase in screen size means more of the canvas is visible. Zoom in (this is the physical zoom, not semantic) is possible until that limit is reached, not the device's resolution limit. similarly zoom out is possible to cater to humans' range in visual actuity but not to deal with app-specific zoom in/out. with such a philosophy, ui development will move from "what controls can i put on screen in device x" towards "what should my user see to do task x if the viewport available is of size vx by vy?"
 
 ### Visible clipboard
 
