@@ -66,6 +66,14 @@ This section is slightly at loggerheads with the sections above, but here goes: 
 
 something like 'ctrl-esc' would get you up to the top and back in one shot.
 
+Since zoom out shows the running apps, the display of running apps can be done in multiple ways:
+
+- as a live carousel (a la Win7/Compiz)
+- as a grid (a la Firefox's experimental view for tabs)
+- grouped (like Win7's taskbar that shows multiple instances of an app as a drop up menu)
+  - this grouping could be used to show apps that start automatically - a replacement for Task Manager/ Activity Monitor?
+  - tagged. why shouldnt running apps be taggable? that way, user-generated task managers become possible!
+
 Ideas without a home
 =====================
 
