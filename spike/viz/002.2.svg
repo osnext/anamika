@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="boot2-1.svg">
+   sodipodi:docname="002.2.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.72302646"
-     inkscape:cx="526.18109"
-     inkscape:cy="372.04724"
+     inkscape:cx="415.53507"
+     inkscape:cy="469.1907"
      inkscape:document-units="px"
      inkscape:current-layer="g3887"
      showgrid="false"
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -151,13 +151,6 @@
          width="474.39481"
          id="rect3857"
          style="fill:#64eb64;fill-opacity:1" />
-      <rect
-         y="519.87274"
-         x="279.2775"
-         height="76.069138"
-         width="474.39481"
-         id="rect3857-7"
-         style="fill:#64eb64;fill-opacity:1" />
       <text
          sodipodi:linespacing="125%"
          id="text3879"
@@ -169,17 +162,42 @@
            x="414.26562"
            id="tspan3881"
            sodipodi:role="line">Services</tspan></text>
+      <rect
+         y="543.31586"
+         x="278.80527"
+         height="51.17379"
+         width="474.39481"
+         id="rect3857-7"
+         style="fill:#64eb64;fill-opacity:1" />
       <text
          sodipodi:linespacing="125%"
          id="text3883"
-         y="564.60431"
-         x="475.12091"
+         y="579.1521"
+         x="474.64868"
          style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           y="564.60431"
-           x="475.12091"
+           y="579.1521"
+           x="474.64868"
            id="tspan3885"
            sodipodi:role="line">UI</tspan></text>
+      <rect
+         y="478.46057"
+         x="280.26654"
+         height="51.17379"
+         width="474.39481"
+         id="rect3857-7-6"
+         style="fill:#64eb64;fill-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         x="382.63962"
+         y="514.27679"
+         id="text4561"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4563"
+           x="382.63962"
+           y="514.27679">Your Desktop</tspan></text>
     </g>
     <text
        xml:space="preserve"
